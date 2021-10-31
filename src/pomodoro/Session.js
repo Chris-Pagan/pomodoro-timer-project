@@ -1,10 +1,10 @@
 import React from "react";
 import { minutesToDuration } from "../utils/duration";
 
-export default function Session({session, currentDuration,secondsToDuration }){
+export default function Session({session, currentDuration,secondsToDuration, minutesToDuration }){
     if(!session) return null;
 
-    let ariaValueNow = ((((currentDuration*60) - session.timeRemaining)/currentDuration*60)*100).toFixed();
+    let ariaValueNow = (((currentDuration*60) - session.timeRemaining)/(currentDuration*60)*100).toFixed();
     let ariaValuePercent = ariaValueNow.toString() + "%"
     
     return (
@@ -31,7 +31,7 @@ export default function Session({session, currentDuration,secondsToDuration }){
                 aria-valuemin="0"
                 aria-valuemax="100"
                 aria-valuenow={ariaValueNow} // TODO: Increase aria-valuenow as elapsed time increases
-                style={{ width: ariaValuePercent}} // TODO: Increase width % as elapsed time increases
+                style={{ width:ariaValuePercent}} // TODO: Increase width % as elapsed time increases
               />
             </div>
           </div>
