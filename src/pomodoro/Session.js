@@ -1,5 +1,5 @@
 import React from "react";
-import { minutesToDuration } from "../utils/duration";
+
 
 export default function Session({session, currentDuration,secondsToDuration, minutesToDuration }){
     if(!session) return null;
